@@ -1,0 +1,9 @@
+[development]
+ENV = "development"
+DEBUG = true
+URL_API_V1 = "127.0.0.1:8000/api/v1"
+
+[production]
+ENV = "production"
+DEBUG = false
+URL_API_V1 = "https://redcraft.org/api/v1"
