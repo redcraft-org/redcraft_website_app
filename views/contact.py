@@ -5,9 +5,9 @@ from service.ApiService import ApiService
 from api_request.RequestsApiV1 import RequestsApiV1
 
 
-bp = Blueprint('rules', __name__)
+bp = Blueprint('contact', __name__)
 
-@bp.route("/rules")
+@bp.route("/contact")
 def home():
-    return render_or_cache_template("pages/rules.html", caching_key='rules', context={}
+    return render_or_cache_template("pages/contact.html", caching_key='contact', context={}
     )

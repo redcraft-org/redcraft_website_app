@@ -17,10 +17,12 @@ def main():
     from views import (
         home,
         rules,
+        contact,
         test
     )
     app.register_blueprint(home.bp)
     app.register_blueprint(rules.bp)
+    app.register_blueprint(contact.bp)
     app.register_blueprint(test.bp)
 
     return app
