@@ -1,0 +1,108 @@
+@import "../colors";
+
+section#conduct-code {
+
+    background-color: $brand-dark-2-dark;
+
+    .three-main {
+        label {
+            cursor: pointer;
+            $transition-hover: .2s;
+            $height-code-conduct: 120px;
+            
+            i.fas {
+                color: $brand-dark-2;
+                position: absolute;
+                font-size: $height-code-conduct;
+                top: 0;
+                margin: auto;
+                transform: translateX(-50%);
+                transition-duration: $transition-hover;
+            }
+    
+            h4 {
+                font-weight: 800;
+                color: $brand-light-2;
+                line-height: $height-code-conduct;
+                position: relative;
+                transition-duration: $transition-hover;
+            }
+
+            &:hover, &:focus {
+                i.fas {
+                    color: $brand-dark-1-dark;
+                }
+
+                h4 {
+                    color: $brand-light-1
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .details {
+        $animation-rule-length: .3s;
+        $animation-distance: 10px;
+
+        position: relative;
+        
+        .code-conduct {
+            width: 100%;
+            flex-shrink: 0;
+            position: absolute;
+
+            .text {
+                opacity: 0;
+                transition-duration: $animation-rule-length;
+                transform: translateY($animation-distance);
+            }
+
+            input[name=code-conduct-radio] {
+                opacity: 0;
+                position: absolute;
+            }
+
+            input:checked + .text {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            input:not(:checked) + .text {
+                animation: rule-active-out $animation-rule-length;
+            }
+        }
+
+        @keyframes rule-active-out {
+            0% {
+                transform: translateY(0px);
+                opacity: 1;
+                z-index: 2;
+            }
+            50% {
+                opacity: 0;
+            }
+            99% {
+                transform: translateY(-$animation-distance);
+                z-index: -1;
+            }
+            100% {
+                transform: translateY($animation-distance);
+            }
+        }
+    }
+}
+
+section#rules {
+    background-color: $brand-light-2;
+    color: $brand-dark-2;
+
+    .card-wall-of-shame {
+        background-color: $brand-light-2-dark;
+        border-color: $brand-dark-1!important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+}
