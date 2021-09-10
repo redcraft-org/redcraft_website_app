@@ -18,11 +18,13 @@ def main():
         home,
         rules,
         contact,
+        donations,
         test
     )
     app.register_blueprint(home.bp)
     app.register_blueprint(rules.bp)
     app.register_blueprint(contact.bp)
+    app.register_blueprint(donations.bp)
     app.register_blueprint(test.bp)
 
     return app
