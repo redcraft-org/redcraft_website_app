@@ -12,10 +12,9 @@ def test():
 
     data = ApiService.request(RequestsApiV1.ARTICLE_LAST, {"language" : "fr"})
 
-    print(data)
-
     return render_or_cache_template("test.html", caching_key='test',
         context={
-            'text': 'Welcome on the test page!'
+            'text': 'Welcome on the test page!',
+            'data': data
         }
     )
