@@ -98,11 +98,11 @@
     <div class="container d-flex flex-column">
         <h4 class="section-titre">Articles</h4>
         <div class="news-container row mb-2">
-            {# {% for article in articles %} #}
-            {#     {% with title=article.title overview=article.overview url=article.url %} #}
-            {#         {% include "website/components/article.html" %} #}
-            {#     {% endwith %} #}
-            {# {% endfor %} #}
+            {% for article in articles %}
+                {% with title=article.title, overview=article.overview, url=article.url %}
+                    {% include "components/article.html" %}
+                {% endwith %}
+            {% endfor %}
         </div>
         <div class="article-more text-right">
             <p><a href="#" class="text-white-50">Voir tous les articles</a></p>
@@ -117,14 +117,14 @@
                 <div class="col-md-4 servers-listing mb-4 mb-md-0">
                     <p class="text-black-50"><small>Cliquez sur un serveur pour en savoir plus</small></p>
                     {# {% for server in servers_list %} #}
-                    {#     {% with title=server.title overview=server.overview index=forloop.counter0 %} #}
+                    {#     {% with title=server.title, overview=server.overview, index=loop.index %} #}
                     {#         {% include "website/components/server-list.html" %} #}
                     {#     {% endwith %} #}
                     {# {% endfor %} #}
                 </div>
                 <div class="server-active-container col-md-8">
                     {# {% for server in servers_list %} #}
-                    {#     {% with title=server.title text=server.text img=server.path_img livemap=server.livemap index=forloop.counter0 %} #}
+                    {#     {% with title=server.title, text=server.text, img=server.path_img, livemap=server.livemap, index=loop.index %} #}
                     {#         {% include "website/components/server-active.html" %} #}
                     {#     {% endwith %} #}
                     {# {% endfor %} #}

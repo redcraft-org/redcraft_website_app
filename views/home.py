@@ -12,7 +12,7 @@ bp = Blueprint('home', __name__)
 def home():
 
     #TODO: Use our own API for the player heads
-    
+
     return render_or_cache_template("pages/home.html", caching_key='home', context={
         'discord': {
             'count_players_online': 15  # TODO: API call
