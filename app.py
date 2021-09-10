@@ -15,9 +15,13 @@ def main():
 
     # TODO: Add dynamic import 
     from views import (
-        home
+        home,
+        rules,
+        test
     )
     app.register_blueprint(home.bp)
+    app.register_blueprint(rules.bp)
+    app.register_blueprint(test.bp)
 
     return app
 

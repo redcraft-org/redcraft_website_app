@@ -9,8 +9,5 @@ bp = Blueprint('home', __name__)
 
 @bp.route("/")
 def home():
-    return render_or_cache_template("base.html", caching_key='home',
-        context={
-            'text': 'Hello Redvax !!'
-        }
+    return render_or_cache_template("pages/home.html", caching_key='home', context={}
     )

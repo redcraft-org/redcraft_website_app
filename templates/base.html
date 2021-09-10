@@ -17,14 +17,14 @@
     </head>
     <body>
         <div id="scroller">
-            {% include "website/components/navbar.html" %}
+            {% include "components/navbar.html" %}
 
             {% block content %}{% endblock %}
 
-            {% include "website/components/footer.html" %}
+            {% include "components/footer.html" %}
 
             {% if is_browser_not_supported %}
-                {% include "website/components/banner-browser-support.html" %}
+                {% include "components/banner-browser-support.html" %}
             {% endif %}
            
         </div>
