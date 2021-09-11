@@ -25,7 +25,7 @@ global_variables = {
         #     'display': 'Stats'
         # },
         {
-            'name': 'rules.index',
+            'name': 'simple.rules',
             'display': 'Règles'
         },
         # {
@@ -33,7 +33,7 @@ global_variables = {
         #     'display': 'Live map'
         # },
         {
-            'name': 'contact.index',
+            'name': 'simple.contact',
             'display': 'Contact'
         }
     ]

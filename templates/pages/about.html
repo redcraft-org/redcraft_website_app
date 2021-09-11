@@ -24,7 +24,7 @@
                 <p class="my-4">
                     L'entièretée du projet RedCraft.org est développé avec des outils modernes dans 
                     l'objectif d'avoir une infrastructure flexible, tout en étant open source. Retrouvez 
-                    toutes les sources sur notre <a href="#{#{{ links.github }}#}" target="_blank">GitHub</a> !
+                    toutes les sources sur notre <a href="{{ global.links.github }}" target="_blank">GitHub</a> !
                     {# TODO: Restore the GitHub link #}
                 </p>
                 <p class="my-4">
@@ -59,13 +59,12 @@
         </p>
         <h4>Comment aider au projet ?</h4>
         <p>
-            {#{% url 'contact' as url_contact %}#}
             La façon la plus efficace de contribuer au projet est de venir 
             nous en parler ! Vous êtes intéressé.e à écrire du code, aider 
             à la construction du terrain ou participer à l'organisation ? 
             Prenez contact avec nous, que ça soit via le 
-            <a href="#{#{{ url_contact }}#}">formulaire de contact</a>, via 
-            <a href="#{#{{ links.discord }}#}" target="_blank">le Discord</a> 
+            <a href="{{ url_for('simple.contact') }}">formulaire de contact</a>, via 
+            <a href="{{ global.links.discord }}" target="_blank">le Discord</a> 
             ou directement en jeu.
         </p>
         <h4>Quelle version le serveur supporte-t-il ?</h4>
