@@ -16,7 +16,7 @@
                    
                     {% set testing = 'it worked' %}
                     {% for page_list in global.pages %}
-                    <li class="nav-item {% if page == page_list.name %}active{% endif %}">
+                    <li class="nav-item {% if request.endpoint == page_list.name %}active{% endif %}">
                         <a class="nav-link" href="{{ url_for(page_list.name) }}">{{ page_list.display }}</a>
                     </li>
                     {% endfor %}
