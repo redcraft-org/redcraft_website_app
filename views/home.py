@@ -1,19 +1,25 @@
-from flask import Blueprint
-from utils import render_or_cache_template
+from flask import Blueprint, request
+from user_agents import parse as parse_user_agents
 
+from utils import render_or_cache_template
 from service.ApiService import ApiService
 from api_request.RequestsApiV1 import RequestsApiV1
+from template_global_datas import global_variables
 
 
 bp = Blueprint('home', __name__)
 
 
 @bp.route("/")
-def home():
+def index():
+
+    user_agent = parse_user_agents(request.headers.get('user-agent'))
 
     #TODO: Use our own API for the player heads
 
     return render_or_cache_template("pages/home.html", caching_key='home', context={
+        'global' : global_variables,
+        'is_browser_not_supported': 'IE' in str(user_agent),
         'discord': {
             'count_players_online': 15  # TODO: API call
         },
@@ -21,7 +27,7 @@ def home():
             'count_players_online': 27,  # TODO: API call
             'ip_address': 'play.redcraft.org',
         },
-        'articles': ApiService.request(RequestsApiV1.ARTICLE_LAST, {'language': 'fr'}),
+        'articles': ApiService.request(RequestsApiV1.ARTICLE_LAST, {'language': 'fr', 'count': 3}),
 
         'network_presentations': None,
         'servers_list': None,
@@ -64,7 +70,7 @@ def home():
                         'socials': [
                             {
                                 'name': 'Twitter',
-                                'url': 'https://twitter.com/_Codelta_',
+                                'url': 'https://twitter.com/Code1ta',
                                 'logo_fa': 'twitter'
                             },
                         ],
