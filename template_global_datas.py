@@ -20,18 +20,18 @@ global_variables = {
             'name': 'donation.index',
             'display': 'Dons'
         },
-        # {
-        #     'name': 'stats.index',
-        #     'display': 'Stats'
-        # },
+        {
+            'name': 'simple.stats',
+            'display': 'Stats'
+        },
         {
             'name': 'simple.rules',
             'display': 'Règles'
         },
-        # {
-        #     'name': 'livemap.index',
-        #     'display': 'Live map'
-        # },
+        {
+            'name': 'simple.livemap',
+            'display': 'Live map'
+        },
         {
             'name': 'simple.contact',
             'display': 'Contact'

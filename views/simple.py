@@ -13,24 +13,21 @@ bp = Blueprint('simple', __name__)
 def about():
     return render_or_cache_template("pages/about.html", caching_key='about', context={
         'global': global_variables
-    }
-    )
+    })
 
 
 @bp.route("/rules")
 def rules():
     return render_or_cache_template("pages/rules.html", caching_key='rules', context={
         'global': global_variables
-    }
-    )
+    })
 
 
 @bp.route("/contact")
 def contact():
     return render_or_cache_template("pages/contact.html", caching_key='contact', context={
         'global': global_variables
-    }
-    )
+    })
 
 
 @bp.route("/vote")
@@ -64,4 +61,18 @@ def vote():
                 'path_img': 'img/pages/vote/serveursminecraft-org.png'
             },
         ]
+    })
+
+
+@bp.route("/stats")
+def stats():
+    return render_or_cache_template("pages/comingsoon.html", caching_key='stats', context={
+        'global': global_variables
+    })
+
+
+@bp.route("/livemap")
+def livemap():
+    return render_or_cache_template("pages/comingsoon.html", caching_key='livemap', context={
+        'global': global_variables
     })
