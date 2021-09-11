@@ -1,16 +1,14 @@
-{% extends 'website/base.html' %}
-{% load static %}
-{% load i18n %}
+{% extends 'base.html' %}
 
 {% block content %}
-{% with title="Vote" waveFill="#202020" %}
-{% include "website/components/section-header.html" %}
+{% with title="Vote", waveFill="#202020" %}
+    {% include "components/section-header.html" %}
 {% endwith %}
 <section id="info">
     <div class="container">
-        <h3 class="section-titre">{% translate "Voter pour le serveur" %}</h3>
-        <p>{% translate "Sur cette page, vous trouvez plusieurs liens vous permettant de voter pour RedCraft. Ainsi, vous aidez le serveur à gagner en popularité ! Merci !" %}</p>
-        <p>{% translate "Pour l'instant, les votes que vous effectuez depuis cette page ne seront pas comptabilisés sur votre compte RedCraft.org." %}</p>
+        <h3 class="section-titre">Voter pour le serveur</h3>
+        <p>Sur cette page, vous trouvez plusieurs liens vous permettant de voter pour RedCraft. Ainsi, vous aidez le serveur à gagner en popularité ! Merci !</p>
+        <p>Pour l'instant, les votes que vous effectuez depuis cette page ne seront pas comptabilisés sur votre compte RedCraft.org.</p>
     </div>
 </section>
 <section id="list">
@@ -19,18 +17,18 @@
             style="stroke: none; fill: #202020;"></path>
     </svg>
     <div class="container">
-        <h3 class="section-titre">{% translate "Liste des sites" %}</h3>
+        <h3 class="section-titre">Liste des sites</h3>
         <div class="card-deck">
             {% for website in websites_list %}
             <div class="col-md-6 py-4">
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="font-weight-bold">{{ website.titre }}</h3>
-                        <img src="{% static website.path_img %}" class="mw-100 mb-3" alt="logo">
+                        <img src="{{ url_for('static', filename=website.path_img) }}" class="mw-100 mb-3" alt="logo">
                         <span>{{ website.explainations }}</span>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ website.url }}" target="_blank" class="btn btn-primary btn-lg float-right btn-over-white"><i class="fas fa-arrow-right mr-2"></i>{% translate "Voter" %}</a>
+                        <a href="{{ website.url }}" target="_blank" class="btn btn-primary btn-lg float-right btn-over-white"><i class="fas fa-arrow-right mr-2"></i>Voter</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +39,7 @@
 {% endblock %}
 
 {% block extra_css %}
-<link href="{% static 'website/css/pages/vote.css' %}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/pages/vote.scss.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block extra_js %}

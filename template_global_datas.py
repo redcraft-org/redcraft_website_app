@@ -12,10 +12,10 @@ global_variables = {
             'name': 'home.index',
             'display': 'Accueil'
         },
-        # {
-        #     'name': 'vote.index',
-        #     'display': 'Vote'
-        # },
+        {
+            'name': 'simple.vote',
+            'display': 'Vote'
+        },
         {
             'name': 'donation.index',
             'display': 'Dons'
